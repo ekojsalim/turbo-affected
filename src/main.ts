@@ -17,7 +17,7 @@ async function run(): Promise<void> {
 
     const commitFilter = base ? `[${base}..${head}]` : "[HEAD^]";
 
-    const command = `npx turbo build --filter="${scope}...[${commitFilter}" --dry=json`;
+    const command = `npx -p turbo -c "turbo build --filter=${scope}...[${commitFilter} --dry=json"`;
 
     let output = "";
     await exec(command, [], {
