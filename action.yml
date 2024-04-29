@@ -1,0 +1,24 @@
+name: "turbo-affected"
+description: "Turbo Affected GitHub Action"
+author: "ekojsalim"
+inputs:
+  scope:
+    required: true
+    description: "The package or scope to check for changes"
+  base:
+    required: false
+    description: "Commit SHA or branch to compare against"
+  head:
+    required: false
+    description: "Commit SHA or branch to compare with"
+outputs:
+  affected:
+    description: "Boolean value to indicate if the package or scope is affected"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
+
+branding:
+  color: blue
+  icon: box
