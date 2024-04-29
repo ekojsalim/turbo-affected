@@ -15,9 +15,9 @@ async function run(): Promise<void> {
       throw new Error("Both base and head must be specified");
     }
 
-    const commitFilter = base ? `[${base}..${head}]` : "[HEAD^]";
+    const commitFilter = base ? `[${base}..${head}]` : "HEAD^";
 
-    const command = `npx -p turbo -c "turbo build --filter=${scope}...[${commitFilter} --dry=json"`;
+    const command = `npx -p turbo -c "turbo build --filter=${scope}...[${commitFilter}] --dry=json"`;
 
     let output = "";
     await exec(command, [], {
