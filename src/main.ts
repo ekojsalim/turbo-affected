@@ -17,10 +17,10 @@ async function run(): Promise<void> {
 
     const commitFilter = base ? `[${base}..${head}]` : "[HEAD^]";
 
-    const command = `turbo run build --filter="${scope}...[${commitFilter}" --dry=json`;
+    const command = `--filter="${scope}...[${commitFilter}" --dry=json`;
 
     let output = "";
-    await exec("npx", [command], {
+    await exec("npx turbo build", [command], {
       listeners: {
         stdout: (data: Buffer) => {
           output += data.toString();
