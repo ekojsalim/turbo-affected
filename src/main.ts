@@ -26,6 +26,7 @@ async function run(): Promise<void> {
           output += data.toString();
         },
       },
+      silent: true,
     });
 
     const parsed = JSON.parse(output);

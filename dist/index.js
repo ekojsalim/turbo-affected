@@ -26207,6 +26207,7 @@ function run() {
                         output += data.toString();
                     },
                 },
+                silent: true,
             });
             const parsed = JSON.parse(output);
             // check if parsed.packages is an array and has at least one element
