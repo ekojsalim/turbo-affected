@@ -11,6 +11,10 @@ inputs:
   head:
     required: false
     description: "Commit SHA or branch to compare with"
+  silent:
+    required: false
+    description: "Boolean value to indicate if the action should be silent"
+    default: "true"
 outputs:
   affected:
     description: "Boolean value to indicate if the package or scope is affected"

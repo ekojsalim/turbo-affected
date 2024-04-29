@@ -26,7 +26,7 @@ async function run(): Promise<void> {
           output += data.toString();
         },
       },
-      silent: true,
+      silent: core.getBooleanInput("silent"),
     });
 
     const parsed = JSON.parse(output);
