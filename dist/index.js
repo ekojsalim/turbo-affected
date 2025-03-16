@@ -26198,7 +26198,7 @@ function run() {
             if ((base && !head) || (!base && head)) {
                 throw new Error("Both base and head must be specified");
             }
-            const commitFilter = base ? `[${base}..${head}]` : "[HEAD^]";
+            const commitFilter = base ? `[${base}...${head}]` : "[HEAD^]";
             const command = `npx -p turbo -c "turbo build --filter='${scope}...${commitFilter}' --dry=json"`;
             let output = "";
             yield (0, exec_1.exec)(command, [], {
